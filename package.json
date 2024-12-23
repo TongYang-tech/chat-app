@@ -1,0 +1,20 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TongYang-tech/chat-app/issues"
+  },
+  "homepage": "https://github.com/TongYang-tech/chat-app#readme",
+  "dependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

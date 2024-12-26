@@ -1,19 +1,19 @@
-import express from 'express'
-import cors from 'cors'
-import bodyParser from 'body-parser'
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+
+import router from './src/routes/index.js';
+
+const app = express();
 
 const corsOptions = {
   origin: ['http://localhost:5173']
-}
-const app = express()
+};
+const port = 5000;
+const basePath = '/api';
 
-app.use(cors(corsOptions))
-app.use(bodyParser.json())
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use(basePath, router);
 
-app.get('/api', (req, res) => {
-  res.status(200).json({
-    'users': ['userOne', 'userTwo', 'userFour']
-  })
-})
-
-app.listen(5000)
+app.listen(port);

@@ -4,6 +4,6 @@ import { messageController } from '../controllers/messageController.js'
 
 const messageRouter = express.Router();
 
-messageRouter.get('/messages', messageController);
+messageRouter.get('/', messageController);
 
 export default messageRouter;

@@ -6,6 +6,6 @@ import healthRouter from './health.js';
 const router = express.Router();
 
 router.use('/v1', v1Router);
-router.use(healthRouter);
+router.use('/health', healthRouter);
 
 export default router;

@@ -4,6 +4,6 @@ import { chatsController } from '../controllers/chatController.js';
 
 const chatsRouter = express.Router();
 
-chatsRouter.get('/chats', chatsController);
+chatsRouter.get('/', chatsController);
 
 export default chatsRouter;

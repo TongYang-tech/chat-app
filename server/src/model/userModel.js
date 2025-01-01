@@ -1,3 +1,5 @@
+import { pool } from '../../config/db.js';
+
 export const userSchema = `
 CREATE TABLE IF NOT EXISTS users (
   user_id SERIAL PRIMARY KEY,
@@ -8,3 +10,9 @@ CREATE TABLE IF NOT EXISTS users (
   updated_at TIMESTAMP DEFAULT NOW()
 );
 `;
+
+export const createUser = async (username, email, password) => {
+  const insertUser = `INSERT INTO users(username, email, password) VALUES($1, $2, $3);`;
+  const values = [username, email, password];
+  await pool.query(insertUser, values);
+};

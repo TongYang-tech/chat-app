@@ -11,8 +11,15 @@ CREATE TABLE IF NOT EXISTS users (
 );
 `;
 
-export const createUser = async (username, email, password) => {
-  const insertUser = `INSERT INTO users(username, email, password) VALUES($1, $2, $3);`;
+export const everyUsers = async () => {
+  const query = `SELECT * FROM users;`;
+  const res = await pool.query(query);
+  return res
+};
+
+export const insertUser = async (username, email, password) => {
+  const query = `INSERT INTO users(username, email, password) VALUES($1, $2, $3);`;
   const values = [username, email, password];
-  await pool.query(insertUser, values);
+  const res = await pool.query(query, values);
+  return res
 };

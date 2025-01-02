@@ -4,8 +4,9 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm run dev",
+    "setup": "npm install && cd ./server && npm run setup && cd ../client && npm run setup",
+    "server": "cd ./server && npm run setup && npm run dev",
+    "client": "cd ./client && npm run setup && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],

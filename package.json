@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "setup": "npm install && cd ./server && npm run setup && cd ../client && npm run setup",
-    "server": "cd ./server && npm run setup && npm run dev",
-    "client": "cd ./client && npm run setup && npm run dev",
+    "server": "cd ./server && npm run setup && npm run start",
+    "client": "cd ./client && npm run setup && npm run start",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
